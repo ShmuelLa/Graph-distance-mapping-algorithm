@@ -1,3 +1,5 @@
+import java.util.Arrays;
+
 public class testbench {
 
     public static void main(String[] args) {
@@ -8,5 +10,11 @@ public class testbench {
                 {5,2,0,AllDistances.inf},
                 {AllDistances.inf,3,AllDistances.inf,0}};
         AllDistances dist = new AllDistances(vw, ew);
+        System.out.println(dist.distance(1,4) + "\n");
+        int[][] tmp = dist.distance_matrix();
+        for (int i = 0; i < tmp.length; i++) {
+            System.out.println(Arrays.toString(tmp[i]));
+        }
+        System.out.println("\n" + dist.path(1,4));
     }
 }
